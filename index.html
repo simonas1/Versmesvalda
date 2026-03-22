@@ -895,7 +895,6 @@
 
 <script>
   // ── EMAIL OBFUSCATION ──
-  // Address is stored as ROT13-encoded parts, assembled and decoded at runtime
   (function() {
     function rot13(s) {
       return s.replace(/[a-zA-Z]/g, function(c) {
@@ -904,13 +903,19 @@
         );
       });
     }
-    // "info" + "@" + "versmesvalda" + "." + "lt"  — each part ROT13'd
-    var u = rot13('vasb');
-    var d = rot13('irefzrfinyqn') + '.' + rot13('yg');
-    var el = document.getElementById('contact-email');
-    if (el) {
-      el.href = 'mailto:' + u + '@' + d;
-      el.textContent = u + '@' + d;
+    function buildEmail() {
+      var u = rot13('vasb');
+      var d = rot13('irefzrfinyqn') + '.' + rot13('yg');
+      var el = document.getElementById('contact-email');
+      if (el) {
+        el.href = 'mailto:' + u + '@' + d;
+        el.textContent = u + '@' + d;
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', buildEmail);
+    } else {
+      buildEmail();
     }
   })();
   // ── LANGUAGE TOGGLE ──
