@@ -261,33 +261,35 @@
     .btn-secondary svg { transition: transform 0.2s; }
     .btn-secondary:hover svg { transform: translateX(3px); }
 
-    .hero-stats {
+    .hero-illustration {
       position: absolute;
-      right: 60px;
-      bottom: 80px;
+      right: 48px;
+      bottom: 60px;
       z-index: 2;
-      display: flex;
-      flex-direction: column;
-      gap: 36px;
+      width: 260px;
       animation: fadeUp 1.2s 0.3s ease both;
+      background: rgba(255,255,255,0.55);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(6px);
+      padding: 20px;
     }
-    .stat {
-      text-align: right;
+    .hero-illustration svg {
+      width: 100%;
+      height: auto;
+      display: block;
     }
-    .stat-number {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 42px;
-      font-weight: 300;
-      color: var(--navy);
-      line-height: 1;
-      letter-spacing: -0.02em;
+    .hero-illustration-caption {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
     }
-    .stat-label {
-      font-size: 8.5px;
-      letter-spacing: 0.28em;
+    .hero-illustration-caption span {
+      font-size: 8px;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--text-muted);
-      margin-top: 6px;
       font-weight: 500;
     }
 
@@ -621,7 +623,7 @@
       nav { padding: 22px 32px; }
       nav.scrolled { padding: 16px 32px; }
       #hero { padding: 130px 32px 160px; }
-      .hero-stats { right: 32px; bottom: 40px; }
+      .hero-illustration { right: 24px; bottom: 40px; width: 220px; }
       #focus, #approach, #sectors, #contact { padding: 80px 32px; }
       .focus-grid { grid-template-columns: 1fr 1fr; }
       .approach-grid { gap: 48px 60px; }
@@ -630,7 +632,7 @@
     }
     @media (max-width: 768px) {
       .nav-links { display: none; }
-      .hero-stats { display: none; }
+      .hero-illustration { display: none; }
       .hero-bg-line { display: none; }
       .focus-grid { grid-template-columns: 1fr; }
       .approach-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -688,21 +690,6 @@
           <path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </a>
-    </div>
-  </div>
-
-  <div class="hero-stats">
-    <div class="stat">
-      <div class="stat-number">3</div>
-      <div class="stat-label" data-en="Core Sectors" data-lt="Pagrindiniai Sektoriai">Core Sectors</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">€</div>
-      <div class="stat-label" data-en="European Markets" data-lt="Europos Rinkos">European Markets</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">LT</div>
-      <div class="stat-label" data-en="Baltic Base" data-lt="Baltijos Bazė">Baltic Base</div>
     </div>
   </div>
 </section>
@@ -787,9 +774,9 @@
     </div>
     <div class="approach-item reveal">
       <div class="approach-item-num">02</div>
-      <div class="approach-item-title" data-en="Integrated Financial Modelling" data-lt="Integruotas Finansinis Modeliavimas">Integrated Financial Modelling</div>
-      <p class="approach-item-body" data-en="We construct comprehensive, multi-phase financial models that connect operational assumptions to investor-level returns — enabling precise sensitivity analysis and capital structure optimisation." data-lt="Mes kuriame išsamius, daugiafazius finansinius modelius, kurie susieja operacines prielaidas su investuotojų lygio grąža — leidžiančius atlikti tikslią jautrumo analizę ir kapitalo struktūros optimizavimą.">
-        We construct comprehensive, multi-phase financial models that connect operational assumptions to investor-level returns — enabling precise sensitivity analysis and capital structure optimisation.
+      <div class="approach-item-title" data-en="Integrated Business Intelligence" data-lt="Integruota Verslo Žvalgyba">Integrated Business Intelligence</div>
+      <p class="approach-item-body" data-en="We apply deep business analytics across every phase of the investment cycle — from market and competitive mapping to operational benchmarking and performance monitoring. Our intelligence layer transforms raw commercial and technical data into actionable insight, sharpening both entry decisions and value creation execution." data-lt="Mes taikome gilią verslo analitiką kiekviename investicijų ciklo etape — nuo rinkos ir konkurencinės aplinkos žemėlapiavimo iki operacinių etalonų nustatymo ir veiklos stebėsenos. Mūsų žvalgybos sluoksnis paverčia neapdorotus komercinius ir techninius duomenis į veiksmingą įžvalgą, tikslinant tiek įėjimo sprendimus, tiek vertės kūrimo vykdymą.">
+        We apply deep business analytics across every phase of the investment cycle — from market and competitive mapping to operational benchmarking and performance monitoring. Our intelligence layer transforms raw commercial and technical data into actionable insight, sharpening both entry decisions and value creation execution.
       </p>
     </div>
     <div class="approach-item reveal">
@@ -828,8 +815,8 @@
     <div class="sector-row">
       <div class="sector-num">01</div>
       <div class="sector-name" data-en="Onshore Energy Production" data-lt="Sausumos Energijos Gamyba">Onshore Energy Production</div>
-      <div class="sector-desc" data-en="Oil & gas extraction, field development, and production asset acquisition across the Baltic and Central European region." data-lt="Naftos ir dujų gavyba, telkinių plėtra ir gamybos turto įsigijimas Baltijos ir Vidurio Europos regione.">
-        Oil & gas extraction, field development, and production asset acquisition across the Baltic and Central European region.
+      <div class="sector-desc" data-en="Geothermal energy development and heat extraction, geological hydrogen prospecting and production, and hydrocarbon field development and asset acquisition across the Baltic and Central European region." data-lt="Geoterminės energijos plėtra ir šilumos gavyba, geologinio vandenilio žvalgyba ir gamyba bei angliavandenilių telkinių plėtra ir turto įsigijimas Baltijos ir Vidurio Europos regione.">
+        Geothermal energy development and heat extraction, geological hydrogen prospecting and production, and hydrocarbon field development and asset acquisition across the Baltic and Central European region.
       </div>
       <svg class="sector-arrow" width="20" height="12" viewBox="0 0 20 12" fill="none">
         <path d="M1 6h18M13 1l6 5-6 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -889,7 +876,7 @@
         </div>
         <div class="contact-detail">
           <div class="contact-detail-label" data-en="Email" data-lt="El. paštas">Email</div>
-          <div class="contact-detail-value"><a href="mailto:info@versmesvalda.lt">info@versmesvalda.lt</a></div>
+          <div class="contact-detail-value"><a id="contact-email" href="#"></a></div>
         </div>
       </div>
     </div>
@@ -907,6 +894,25 @@
 </footer>
 
 <script>
+  // ── EMAIL OBFUSCATION ──
+  // Address is stored as ROT13-encoded parts, assembled and decoded at runtime
+  (function() {
+    function rot13(s) {
+      return s.replace(/[a-zA-Z]/g, function(c) {
+        return String.fromCharCode(
+          (c <= 'Z' ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26
+        );
+      });
+    }
+    // "info" + "@" + "versmesvalda" + "." + "lt"  — each part ROT13'd
+    var u = rot13('vasb');
+    var d = rot13('irefzrfinyqn') + '.' + rot13('yg');
+    var el = document.getElementById('contact-email');
+    if (el) {
+      el.href = 'mailto:' + u + '@' + d;
+      el.textContent = u + '@' + d;
+    }
+  })();
   // ── LANGUAGE TOGGLE ──
   let currentLang = 'en';
 
@@ -947,12 +953,4 @@
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
         setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  revealEls.forEach(el => observer.observe(el));
-
-  // ── SMOOTH ANCHOR SCROLL ──
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('cl
+        observ
